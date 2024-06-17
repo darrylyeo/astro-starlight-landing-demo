@@ -1540,3 +1540,24 @@
 		</div>
 	</div><!--/$-->
 </main>
+
+
+<script>
+	import KeenSliderModule from 'keen-slider'
+
+	const { default: KeenSlider } = KeenSliderModule
+	console.log({KeenSlider})
+
+	new KeenSlider(
+		'.keen-slider',
+		{
+			loop: true,
+			created: () => {
+				console.log('created')
+			},
+		},
+		[
+			// add plugins here
+		]
+	)
+</script>
