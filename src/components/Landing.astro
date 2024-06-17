@@ -1,0 +1,1542 @@
+<style>
+	@import url(Landing-styles/tailwind.css);
+	@import url(Landing-styles/landing-1.css);
+	@import url(Landing-styles/landing-2.css);
+
+	html,
+	body {
+		background: black;
+	}
+</style>
+
+<style id="__jsx-2797841030">
+	:root {
+		--font-inter: '__Inter_aaf875', '__Inter_Fallback_aaf875';
+		--font-aeonik: '__aeonik_c0182b', '__aeonik_Fallback_c0182b'
+	}
+</style>
+
+<style id="__jsx-9865718e4b5d306f">
+	#nprogress {
+		pointer-events: none
+	}
+
+	#nprogress .bar {
+		background: #69ba6d;
+		position: fixed;
+		z-index: 100002;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px
+	}
+
+	#nprogress .peg {
+		display: block;
+		position: absolute;
+		right: 0px;
+		width: 100px;
+		height: 100%;
+		-webkit-box-shadow: 0 0 10px#29d, 0 0 5px#29d;
+		-moz-box-shadow: 0 0 10px#29d, 0 0 5px#29d;
+		box-shadow: 0 0 10px#29d, 0 0 5px#29d;
+		opacity: 1;
+		-webkit-transform: rotate(3deg)translate(0px, -4px);
+		-ms-transform: rotate(3deg)translate(0px, -4px);
+		-moz-transform: rotate(3deg)translate(0px, -4px);
+		-o-transform: rotate(3deg)translate(0px, -4px);
+		transform: rotate(3deg)translate(0px, -4px)
+	}
+
+	#nprogress .spinner {
+		display: block;
+		position: fixed;
+		z-index: 1031;
+		top: 15px;
+		right: 15px
+	}
+
+	#nprogress .spinner-icon {
+		width: 18px;
+		height: 18px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border: solid 2px transparent;
+		border-top-color: #29d;
+		border-left-color: #29d;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		-webkit-animation: nprogress-spinner 400ms linear infinite;
+		-moz-animation: nprogress-spinner 400ms linear infinite;
+		-o-animation: nprogress-spinner 400ms linear infinite;
+		animation: nprogress-spinner 400ms linear infinite
+	}
+
+	.nprogress-custom-parent {
+		overflow: hidden;
+		position: relative
+	}
+
+	.nprogress-custom-parent #nprogress .spinner,
+	.nprogress-custom-parent #nprogress .bar {
+		position: absolute
+	}
+
+	@-webkit-keyframes nprogress-spinner {
+		0% {
+			-webkit-transform: rotate(0deg)
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg)
+		}
+	}
+
+	@-webkit-keyframes nprogress-spinner {
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg)
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg)
+		}
+	}
+
+	@-moz-keyframes nprogress-spinner {
+		0% {
+			-moz-transform: rotate(0deg);
+			transform: rotate(0deg)
+		}
+
+		100% {
+			-moz-transform: rotate(360deg);
+			transform: rotate(360deg)
+		}
+	}
+
+	@-o-keyframes nprogress-spinner {
+		0% {
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg)
+		}
+
+		100% {
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg)
+		}
+	}
+
+	@keyframes nprogress-spinner {
+		0% {
+			-webkit-transform: rotate(0deg);
+			-moz-transform: rotate(0deg);
+			-o-transform: rotate(0deg);
+			transform: rotate(0deg)
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			-moz-transform: rotate(360deg);
+			-o-transform: rotate(360deg);
+			transform: rotate(360deg)
+		}
+	}
+</style>
+
+<style type="text/css">
+	.rfm-marquee-container {
+		overflow-x: hidden;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		width: var(--width);
+		transform: var(--transform);
+	}
+
+	.rfm-marquee-container:hover div {
+		animation-play-state: var(--pause-on-hover);
+	}
+
+	.rfm-marquee-container:active div {
+		animation-play-state: var(--pause-on-click);
+	}
+
+	.rfm-overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.rfm-overlay::before,
+	.rfm-overlay::after {
+		background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: var(--gradient-width);
+		z-index: 2;
+		pointer-events: none;
+		touch-action: none;
+	}
+
+	.rfm-overlay::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	.rfm-overlay::before {
+		left: 0;
+		top: 0;
+	}
+
+	.rfm-marquee {
+		flex: 0 0 auto;
+		min-width: var(--min-width);
+		z-index: 1;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+		animation-play-state: var(--play);
+		animation-delay: var(--delay);
+		animation-direction: var(--direction);
+	}
+
+	@keyframes scroll {
+		0% {
+			transform: translateX(0%);
+		}
+	
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+	.rfm-initial-child-container {
+		flex: 0 0 auto;
+		display: flex;
+		min-width: auto;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.rfm-child {
+		transform: var(--transform);
+	}
+</style>
+
+<style type="text/css">
+	.index-module_type__E-SaG::after {
+		content: '|';
+		animation: index-module_cursor__PQg0P 1.1s infinite step-start;
+	}
+
+	@keyframes index-module_cursor__PQg0P {
+		50% {
+			opacity: 0;
+		}
+	}
+</style>
+
+
+<main class="jsx-2797841030 __variable_c0182b __variable_aaf875 font-sans">
+	<style>
+		/*! Bundled license information:
+
+		react-quill/dist/quill.bubble.css:
+		  (*!
+		   * Quill Editor v1.3.7
+		   * https://quilljs.com/
+		   * Copyright (c) 2014, Jason Chen
+		   * Copyright (c) 2013, salesforce.com
+		   *)
+		*/
+
+		.\3c1_4UCwk {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1tltWw {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1 eBt6X {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1hr08B {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1 dhxvY {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1 bVJq1 {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1vOwbs {
+			display: flex;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			flex-direction: column;
+			overflow-x: hidden;
+			overflow-y: visible;
+			min-width: 0;
+			min-height: 0
+		}
+
+		.\3c1irVLs.\3c1i,
+		.\3c1gtMeT.\3c1i,
+		.\3c1hndG5.\3c1i,
+		.\3c1oz5Vx.\3c1i {
+			max-width: 100%;
+			object-fit: cover;
+			position: relative
+		}
+
+		.\3c1myEVz {
+			display: grid;
+			position: relative;
+			align-content: flex-start;
+			justify-items: stretch;
+			width: 100%;
+			min-width: 0;
+			grid-template-columns: var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk)) min(var(--plsmc-standard-width), calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))) minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+			padding: 6rem 0px
+		}
+
+		.\3c1myEVz>* {
+			grid-column: 4
+		}
+
+		.\3c1_1WnrJ {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			height: auto;
+			z-index: 1;
+			grid-column-start: 1 !important;
+			grid-column-end: -1 !important
+		}
+
+		.\3c1ic9M.\3c1i {
+			max-width: 720px;
+			object-fit: cover
+		}
+
+		.\3c1_97Bj.\3c1i {
+			object-fit: cover;
+			position: relative;
+			width: 100%;
+			display: block;
+			min-width: 0
+		}
+
+		.\3c1qiBi {
+			display: grid;
+			position: relative;
+			align-content: flex-start;
+			justify-items: stretch;
+			width: 100%;
+			min-width: 0;
+			grid-template-columns: var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk)) min(var(--plsmc-standard-width), calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))) minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
+			padding: 0px 0px 6rem
+		}
+
+		.\3c1qiBi>* {
+			grid-column: 4
+		}
+
+		@media (min-width:0px) and (max-width:640px) {
+			.\3c1qiBi {
+				padding-bottom: 104px
+			}
+		}
+
+		@media (min-width:0px) and (max-width:640px) {
+			.\3c1qiBi>* {
+				grid-column: 4
+			}
+		}
+
+		.\3c1_6LYvX {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			height: auto;
+			z-index: 20;
+			grid-column-start: 1 !important;
+			grid-column-end: -1 !important
+		}
+
+		@media (min-width:0px) and (max-width:640px) {
+			.\3c1_6LYvX {
+				margin-bottom: 48px
+			}
+		}
+
+		.\3c1_2Cgsn.\3c1i {
+			max-width: 720px;
+			object-fit: cover
+		}
+
+		.\3c1tLbYz.\3c1i {
+			max-width: 100%;
+			object-fit: cover;
+			position: relative;
+			width: 100%;
+			grid-column-start: 1 !important;
+			grid-column-end: -1 !important
+		}
+
+		.\3c1xujys.\3c1i,
+		.\3c1lZ6G.\3c1i {
+			max-width: 100%;
+			object-fit: cover;
+			position: relative
+		}
+
+		.\3c1i5RuN {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1_6Ssm1 {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1zuyN6 {
+			display: flex;
+			flex-direction: row
+		}
+
+		.\3c1zkYyR {
+			display: flex;
+			flex-direction: row
+		}
+	</style>
+
+	<div class="plasmic_page_wrapper">
+		<div class="ρd__all ρd__div ρr-4G3uU ρdss ρmns ρtns ρvOwbs">
+			<header class="bg-black text-left relative z-50 bg-offpurple/20 backdrop-blur-[6px] md:backdrop-blur-0 md:bg-transparent">
+				<hr style="background-image:linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, #FFF 52.07%, rgba(255, 255, 255, 0.00) 100%)" class="absolute bottom-0 w-full h-px -translate-x-1/2 border-0 opacity-10 left-1/2">
+				<div>
+					<div class="text-white bg-black bg-opacity-40">
+						<div class="container  border-b border-white/10">
+							<div class="flex items-center justify-center">
+								<p class="items-center hidden gap-4 py-4 text-base md:flex"><a class="relative flex items-center w-6 h-6 shrink-0" href="https://scale.com/leaderboard?utm_source=banner&amp;utm_medium=direct-traffic&amp;utm_campaign=FY2406-BRAND-Leaderboards-and-Eval2024"><img alt="icon" fetchpriority="high" decoding="async" data-nimg="fill" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="100vw" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1920&amp;q=75"></a><a class="inline lg:whitespace-nowrap" href="https://scale.com/leaderboard?utm_source=banner&amp;utm_medium=direct-traffic&amp;utm_campaign=FY2406-BRAND-Leaderboards-and-Eval2024">Introducing the SEAL Leaderboards: the first truly expert-driven, trustworthy LLM contest.</a><a class="group text-white" target="_self" href="https://scale.com/leaderboard?utm_source=banner&amp;utm_medium=direct-traffic&amp;utm_campaign=FY2406-BRAND-Leaderboards-and-Eval2024"><span class="font-medium">See the Leaderboard</span> <span class="transition-transform duration-500 ease-out inline-block arrow font-unicode group-hover:translate-x-1">→</span></a></p><a class="flex items-center gap-4 py-3 text-sm sm:gap-2 md:hidden" href="https://scale.com/leaderboard?utm_source=banner&amp;utm_medium=direct-traffic&amp;utm_campaign=FY2406-BRAND-Leaderboards-and-Eval2024"><span class="relative flex items-center w-8 h-8 shrink-0 md:w-6 md:h-6"><img alt="icon" fetchpriority="high" decoding="async" data-nimg="fill" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="100vw" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fe64ff77a9d3b99b65296b0b2ebe904e4.png&amp;w=1920&amp;q=75"></span><span class="lg:whitespace-nowrap">Introducing the SEAL Leaderboards: the first truly expert-driven, trustworthy LLM contest.</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="flex items-center lg:relative lg:justify-between h-14 lg:h-18">
+						<div class="flex justify-between w-full lg:w-auto lg:relative lg:z-10">
+							<div class="flex items-center">
+								<div class="h-5 -mt-1"><a aria-label="Scale" href="/">
+										<h2 class="sr-only">Scale</h2><svg class="w-auto h-full fill-current text-white" viewBox="0 0 489 157">
+											<path d="M352.083 156.702a7.581 7.581 0 01-7.582-7.582V7.582A7.581 7.581 0 01352.083 0a7.581 7.581 0 017.583 7.582V149.12a7.581 7.581 0 01-7.583 7.582zm129.674-19.861a7.581 7.581 0 00-.871-10.687 7.581 7.581 0 00-10.687.871c-7.835 9.223-19.563 14.513-32.182 14.513-20.904 0-37.911-17.007-37.911-37.911s17.007-37.91 37.911-37.91c16.986 0 31.177 12.204 34.257 28.306h-46.391a7.581 7.581 0 00-7.582 7.583 7.581 7.581 0 007.582 7.582h54.593a7.58 7.58 0 007.582-7.582v-1.012c0-27.595-22.448-50.044-50.044-50.044-29.267 0-53.077 23.81-53.077 53.077s23.814 53.075 53.08 53.075c17.076 0 33.019-7.24 43.74-19.861zm-162.53 12.279v-48.529c0-27.595-22.448-50.043-50.043-50.043-29.268 0-53.078 23.81-53.078 53.077s23.81 53.077 53.078 53.077a7.581 7.581 0 007.582-7.582 7.58 7.58 0 00-7.582-7.582c-20.904 0-37.911-17.007-37.911-37.911s17.007-37.91 37.911-37.91c19.231 0 34.879 15.645 34.879 34.879v48.526a7.58 7.58 0 007.582 7.582 7.585 7.585 0 007.582-7.584zM89.711 126.373c0-7.4-2.718-17.494-15.668-23.559-7.77-3.64-17.52-5.135-26.949-6.581-22.09-3.387-29.934-6.217-29.934-15.355 0-9.955 13.805-15.164 27.443-15.164 8.594 0 20.944 1.733 30.986 9.991a7.584 7.584 0 009.635-11.715c-13.51-11.112-29.547-13.445-40.619-13.445-29.274 0-42.607 15.722-42.607 30.329 0 7.45 2.729 17.611 15.728 23.72 7.813 3.671 17.605 5.171 27.074 6.624 21.954 3.367 29.749 6.161 29.749 15.151 0 9.071-10.829 15.164-26.942 15.164-16.496 0-29.068-6.689-35.092-10.678a7.584 7.584 0 00-10.508 2.138 7.582 7.582 0 002.138 10.508c12.854 8.513 28.289 13.201 43.457 13.201 29.089 0 42.108-15.234 42.108-30.329zm109.939 7.95a7.585 7.585 0 00-2.117-10.513 7.584 7.584 0 00-10.513 2.118c-6.494 9.774-17.362 15.607-29.068 15.607-20.904 0-37.911-17.006-37.911-37.91 0-20.904 17.007-37.91 37.911-37.91 11.708 0 22.574 5.833 29.068 15.607a7.582 7.582 0 0010.513 2.117 7.581 7.581 0 002.117-10.512c-9.312-14.014-24.902-22.38-41.698-22.38-29.267 0-53.077 23.81-53.077 53.078 0 29.267 23.81 53.077 53.077 53.077 16.798 0 32.386-8.366 41.698-22.379z"></path>
+										</svg>
+									</a></div>
+							</div>
+							<div class="flex items-center cursor-pointer lg:hidden"><svg class="w-6 h-auto fill-current text-white" viewBox="0 0 24 12">
+									<rect width="24" height="2"></rect>
+									<rect y="5" width="24" height="2"></rect>
+									<rect y="10" width="24" height="2"></rect>
+								</svg></div>
+						</div>
+						<div class="opacity-0 lg:opacity-100 absolute lg:static pointer-events-none lg:pointer-events-auto">
+							<div class="">
+								<div class="z-auto hidden -translate-y-1/2 top-1/2 lg:absolute lg:left-0 lg:right-0 lg:justify-center lg:items-center lg:flex">
+									<div>
+										<nav class="m-auto">
+											<ul class="flex justify-center list-none m-0">
+												<li class="relative" style="z-index:60">
+													<div class="relative" style="z-index:60"><button class="text-white bg-transparent text-sm flex justify-center px-2 xl:px-4 border-0 relative z-10 hover:text-opacity-70" type="button">Products</button>
+														<div class="absolute pt-8 transform -translate-x-1/2 left-1/2" style="perspective:1500px"></div>
+													</div>
+												</li>
+												<li class="relative" style="z-index:60">
+													<div class="relative" style="z-index:60"><button class="text-white bg-transparent text-sm flex justify-center px-2 xl:px-4 border-0 relative z-10 hover:text-opacity-70" type="button">Government</button>
+														<div class="absolute pt-8 transform -translate-x-1/2 left-1/2" style="perspective:1500px"></div>
+													</div>
+												</li>
+												<li class="relative" style="z-index:60">
+													<div class="relative" style="z-index:60"><button class="text-white bg-transparent text-sm flex justify-center px-2 xl:px-4 border-0 relative z-10 hover:text-opacity-70" type="button">Customers</button>
+														<div class="absolute pt-8 transform -translate-x-1/2 left-1/2" style="perspective:1500px"></div>
+													</div>
+												</li>
+												<li class="relative" style="z-index:60">
+													<div class="relative" style="z-index:60"><button class="text-white bg-transparent text-sm flex justify-center px-2 xl:px-4 border-0 relative z-10 hover:text-opacity-70" type="button">Resources</button>
+														<div class="absolute pt-8 transform -translate-x-1/2 left-1/2" style="perspective:1500px"></div>
+													</div>
+												</li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+								<div class="z-auto p-4 lg:hidden">
+									<div>
+										<h4 class="text-neutral-400 block uppercase text-xs tracking-wider">Products</h4>
+										<ul class="grid grid-cols-2 gap-y-4 mt-4 pb-4 border-b border-neutral-800">
+											<div class="space-y-4">
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/data-engine">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="engine" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fengine.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fengine.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fengine.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Scale Data Engine</span><span class="block text-sm mt-px text-neutral-400">Data for training models</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/generative-ai-data-engine">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="genai" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgenai.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgenai.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgenai.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Generative Al</span><span class="block text-sm mt-px text-neutral-400">Supervised fine-tuning and RLHF</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/public-sector-data-engine">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="gov" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgov.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgov.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fgov.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Government</span><span class="block text-sm mt-px text-neutral-400">High-quality data for public sector</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/automotive">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="automotive" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fautomotive.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fautomotive.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fautomotive.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Automotive</span><span class="block text-sm mt-px text-neutral-400">Unlock L2 to L5 autonomy</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/donovan">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="donovan" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdonovan.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdonovan.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdonovan.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Scale Donovan</span><span class="block text-sm mt-px text-neutral-400">Platform for Government AI</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/genai-platform">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="platform" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fplatform.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fplatform.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fplatform.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Scale GenAI Platform</span><span class="block text-sm mt-px text-neutral-400">Full-stack generative AI</span></p>
+														</div>
+													</a></li>
+											</div>
+											<div class="space-y-4">
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/evaluation/model-developers">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="evaluation" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fevaluation.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fevaluation.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fevaluation.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Scale Evaluation</span><span class="block text-sm mt-px text-neutral-400">Evaluation of AI models and applications</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/evaluation/model-developers">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="devs" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdevs.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdevs.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fdevs.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Models Developers</span><span class="block text-sm mt-px text-neutral-400">Model evaluations and red teaming</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/evaluation/public-sector">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="public" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fpublic.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fpublic.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fpublic.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Public Sector</span><span class="block text-sm mt-px text-neutral-400">Evaluation for AI systems</span></p>
+														</div>
+													</a></li>
+												<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/evaluation/enterprise">
+														<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="enterprise" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fenterprise.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fenterprise.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fproducts%2Fenterprise.png&amp;w=96&amp;q=75"></span>
+															<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">For Enterprise</span><span class="block text-sm mt-px text-neutral-400">Evaluation and monitoring for Enterprise AI apps</span></p>
+														</div>
+													</a></li>
+											</div>
+										</ul>
+										<h4 class="text-neutral-400 block mt-4 uppercase text-xs tracking-wider">Government</h4>
+										<ul class="grid grid-cols-2 gap-y-4 mt-4 pb-4 border-b border-neutral-800">
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/defense">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-6 lg:w-6"><img alt="defense" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fdefense.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fdefense.png&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fdefense.png&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Defense</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/federal">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-6 lg:w-6"><img alt="federal" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Ffederal.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Ffederal.png&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Ffederal.png&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Federal</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/public-sector">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-6 lg:w-6"><img alt="public-sector" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fpublic-sector.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fpublic-sector.png&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fgovernment%2Fpublic-sector.png&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Public Sector</span></p>
+													</div>
+												</a></li>
+										</ul>
+										<h4 class="text-neutral-400 block mt-4 uppercase text-xs tracking-wider">Resources</h4>
+										<ul class="grid grid-cols-2 gap-y-4 mt-4 pb-4 border-b border-neutral-800">
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/about">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="about" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fabout.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fabout.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fabout.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">About</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/blog">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="blog" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fblog.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fblog.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fblog.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Blog</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/guides">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="guides" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fguides.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fguides.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fguides.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Guides</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/events">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="events" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fevents.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fevents.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fevents.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Events</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/careers">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="careers" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fcareers.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fcareers.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fcareers.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Careers</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/docs">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="documentation" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fdocumentation.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fdocumentation.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fdocumentation.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Documentation</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/ai-readiness-report">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="ai-readiness-report" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fai-readiness-report.svg&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fai-readiness-report.svg&amp;w=48&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fresources%2Fai-readiness-report.svg&amp;w=48&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">AI Readiness Report 2024</span></p>
+													</div>
+												</a></li>
+										</ul>
+										<h4 class="text-neutral-400 block mt-4 uppercase text-xs tracking-wider">Customers</h4>
+										<ul class="grid grid-cols-2 mt-4 gap-y-4">
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/blog/how-to-label-1m-data-points-week">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="open-ai" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopen-ai.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopen-ai.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopen-ai.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Open AI</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/customers">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="microsoft" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fmicrosoft.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fmicrosoft.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fmicrosoft.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Microsoft</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/customers/toyota">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="toyota" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Ftoyota.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Ftoyota.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Ftoyota.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Toyota</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/customers/brex">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="brex" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fbrex.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fbrex.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fbrex.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Brex</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/customers/flexport">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="flexport" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fflexport.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fflexport.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fflexport.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">Flexport</span></p>
+													</div>
+												</a></li>
+											<li class="DropdownItem_dropdownItem__iI2LA m-0 p-0 select-none lg:whitespace-nowrap"><a href="/customers/opensea">
+													<div style="-webkit-backface-visibility:hidden" class="flex lg:items-center gap-1.5 md:gap-3 group font-normal transition-colors duration-300 ease"><span class="w-4 h-4 block transform transition-transform duration-300 ease shrink-0 lg:h-10 lg:w-10"><img alt="opensea" loading="lazy" width="48" height="48" decoding="async" data-nimg="1" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopensea.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopensea.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Fglobal%2Fheader%2Fcustomers%2Fopensea.png&amp;w=96&amp;q=75"></span>
+														<p class="transition-opacity duration-300 opacity-90 group-hover:opacity-100"><span class="block text-xs md:text-sm text-white">OpenSea</span></p>
+													</div>
+												</a></li>
+										</ul><a class="inline-block mt-4 text-xs" href="/customers">See all customers</a>
+									</div>
+								</div>
+								<nav class="bg-neutral-800 lg:bg-transparent text-center lg:text-left list-none lg:flex py-2 lg:py-0 overflow-hidden md:overflow-visible">
+									<ul class="flex items-center justify-center py-0 text-center list-none -translate-x-2 bg-transparent gap-x-6 md:-translate-x-0 md:gap-x-0 md:grid md:grid-cols-2 justify-items-center lg:flex lg:text-left">
+										<li class="md:mr-[14px]"><a style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/demo">
+												<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--purple__hhI2y text-sm px-[30px] py-[14px]">Book a Demo<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(105,57,193,0.4)]"></span>
+											</a></li>
+										<li class="relative py-2 lg:p-0 lg:mr-6 last:mr-0"><a class="font-normal text-xs md:text-sm leading-5 block select-none cursor-pointer transition-all duration-300 hover:text-opacity-75 text-white" href="https://dashboard.scale.com/login">Log In</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<section id="" class="py-18 lg:py-20 bg-transparent pt-0 lg:pt-0 pb-0 lg:pb-0">
+				<div class="container relative">
+					<div class="absolute top-0 hidden -translate-x-1/2 lg:block left-1/2">
+						<div class="w-full lg:w-auto pointer-events-none select-none">
+							<div class="hidden md:block">
+								<div style="width: 1400px; height: 650px;">
+									<div class="[&amp;>canvas]:!w-full [&amp;>canvas]:!h-full" style="width: 100%; height: 100%;"><canvas style="display: block; width: 2800px; height: 1300px;" width="1400" height="650"></canvas></div>
+								</div>
+							</div>
+						</div>
+					</div><img alt="" loading="lazy" width="1170" height="511" decoding="async" data-nimg="1" class="top-7 sm:top-0 md:-top-7 opacity-0 select-none transition-opacity duration-1000 pointer-events-none absolute object-cover min-w-[155vw] sm:min-w-[120vw] lg:hidden left-[54%] md:left-1/2 -translate-x-1/2" style="color: transparent; opacity: 1;" sizes="100vw" srcset="/_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=320&amp;q=90 320w, /_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=384&amp;q=90 384w, /_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=768&amp;q=90 768w, /_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=992&amp;q=90 992w, /_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=1200&amp;q=90 1200w, /_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=1920&amp;q=90 1920w" src="/_next/image?url=%2Fstatic%2Fimages%2Fpages%2Fhomepage%2Fhero-bg-mobile.png&amp;w=1920&amp;q=90">
+					<div class="pt-24 xl:pt-44">
+						<div class="relative z-10">
+							<h1 class="text-5xl font-light sm:leading-none leading-[1.1] sm:text-7xl xl:text-[89px] tracking-[-0.89px] font-aeonik text-center" style="text-shadow:0px 10px 20px 0px rgba(0, 0, 0, 0.35)">Power <br class="lg:hidden"><span class="relative"><span class="invisible">Government&nbsp;AI</span>
+									<div class="hero_cubespinner__5nU4O">
+										<div class="hero_face1____5ZN">Generative&nbsp;AI</div>
+										<div class="hero_face2__hWvJM">Automotive&nbsp;AI</div>
+										<div class="hero_face3__qUXn4">Government&nbsp;AI</div>
+									</div>
+								</span><br> With Your&nbsp;Data</h1>
+							<h2 class="my-6 font-sans text-base text-[#F5F5F5] sm:px-0 font-medium leading-normal lg:my-[22px] lg:text-lg md:w-11/12 lg:w-full text-center lg:max-w-[800px] mx-auto">Make the best models with the best data. Scale Data Engine leverages your enterprise data, and with Scale GenAI Platform, safely unlocks the value of&nbsp;AI.</h2>
+							<div class="items-center w-full mx-auto space-x-6 md:mb-0 xl:mb-9 max-w-max"><a style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/demo">
+									<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--purple__hhI2y text-sm px-[30px] py-[14px]">Book a Demo<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(105,57,193,0.4)]"></span>
+								</a><a style="-webkit-tap-highlight-color:transparent" class="text-[#F4F0FF] hover:text-white transition-colors duration-300 py-2 font-medium whitespace-nowrap text-sm leading-5 group relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/data-engine">Build AI<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></a></div>
+						</div>
+						<section id="" class="py-18 lg:py-20 bg-transparent pt-0 lg:pt-0 pb-0 lg:pb-0 relative">
+							<div class="relative">
+								<div class="pt-6 pb-12 sm:pb-16 sm:pt-20 xl:pb-16 xl:pt-24" style="opacity: 1; visibility: inherit;">
+									<div class="hidden mb-12 text-sm leading-6 text-center text-neutral-400 lg:block">Scale works with<!-- --> <button class="section-title inline-block relative cursor-pointer transition-colors duration-300 hover:text-neutral-200" type="button">Generative AI Companies<div class="transition-opacity duration-300 absolute bottom-0 h-[1px] w-full bg-silver opacity-0"></div>
+											<div class="line opacity-0 scale-x-0 absolute bottom-0 h-[1px] w-full bg-white origin-left" style="opacity: 0; translate: none; rotate: none; scale: none; transform: scale(0, 1);"></div>
+										</button>, <button class="section-title inline-block relative cursor-pointer transition-colors duration-300 hover:text-neutral-200" type="button">U.S. Government Agencies<div class="transition-opacity duration-300 absolute bottom-0 h-[1px] w-full bg-silver opacity-0"></div>
+											<div class="line opacity-0 scale-x-0 absolute bottom-0 h-[1px] w-full bg-white origin-left" style="opacity: 0; translate: none; rotate: none; scale: none; transform: scale(0, 1);"></div>
+										</button> &amp; <button class="section-title inline-block relative cursor-pointer transition-colors duration-300 text-white" type="button">Enterprises<div class="transition-opacity duration-300 absolute bottom-0 h-[1px] w-full bg-silver opacity-100"></div>
+											<div class="line opacity-0 scale-x-0 absolute bottom-0 h-[1px] w-full bg-white origin-left" style="opacity: 100; translate: none; rotate: none; scale: none; transform: translate3d(0px, 0px, 0px) scale(0.1119, 1);"></div>
+										</button></div>
+									<div class="relative hidden lg:block h-14">
+										<div class="logos absolute w-full top-1/2 -translate-y-1/2 transition-opacity duration-700 opacity-0">
+											<div class="relative grid text-white">
+												<ul class="items-center justify-center md:gap-y-16 justify-between flex lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 grid-cols-4 gap-12 gap-y-10">
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="openai" fetchpriority="high" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="cohere" fetchpriority="high" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="nvidia" fetchpriority="high" width="100" height="18" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="adept" fetchpriority="high" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="character ai" fetchpriority="high" width="129" height="31" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="logos absolute w-full top-1/2 -translate-y-1/2 transition-opacity duration-700 opacity-0">
+											<div class="relative grid text-white">
+												<ul class="items-center justify-center md:gap-y-16 justify-between flex lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 grid-cols-4 gap-12 gap-y-10">
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="usarmy" fetchpriority="high" width="40" height="40" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="airforce" fetchpriority="high" width="65" height="51" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="defense innovation unit" fetchpriority="high" width="120" height="14" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="cdao" fetchpriority="high" width="113" height="30" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="logos absolute w-full top-1/2 -translate-y-1/2 transition-opacity duration-700 opacity-100 delay-300">
+											<div class="relative grid text-white">
+												<ul class="items-center justify-center md:gap-y-16 justify-between flex lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 grid-cols-4 gap-12 gap-y-10">
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="general-motors" fetchpriority="high" width="36" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="toyota" fetchpriority="high" width="76" height="25" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="fox" fetchpriority="high" width="71" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="accenture" fetchpriority="high" width="111" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100"></div>
+													</li>
+													<li class="flex justify-center items-center">
+														<div class="relative"><img alt="koch logo" fetchpriority="high" width="130" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100"></div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="lg:hidden">
+										<p class="mb-10 text-sm leading-6 text-center text-gray-400">Scale works with<!-- --> <!-- -->Generative AI Companies<!-- -->, <!-- -->U.S. Government Agencies<!-- --> &amp;&nbsp;<!-- -->Enterprises</p>
+										<div class="relative w-screen -translate-x-1/2 left-1/2 h-[47px]">
+											<div class="rfm-marquee-container space-x-12" style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
+												<div class="rfm-marquee" style="--play: running; --direction: normal; --duration: 0s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+													<div class="rfm-initial-child-container">
+														<div class="rfm-child" style="--transform: none;">
+															<div class="relative grid text-white">
+																<ul class="items-center justify-center md:gap-y-16 justify-between flex lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 grid-cols-4 gap-12 gap-y-10">
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="openai" fetchpriority="high" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="cohere" fetchpriority="high" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="nvidia" fetchpriority="high" width="100" height="18" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="adept" fetchpriority="high" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="character ai" fetchpriority="high" width="129" height="31" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="usarmy" fetchpriority="high" width="40" height="40" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="airforce" fetchpriority="high" width="65" height="51" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="defense innovation unit" fetchpriority="high" width="120" height="14" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="cdao" fetchpriority="high" width="113" height="30" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="general-motors" fetchpriority="high" width="36" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="toyota" fetchpriority="high" width="76" height="25" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="fox" fetchpriority="high" width="71" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="accenture" fetchpriority="high" width="111" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="koch logo" fetchpriority="high" width="130" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="brex" fetchpriority="high" width="72" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="flexport" fetchpriority="high" width="80" height="18" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="instacart" fetchpriority="high" width="111" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="faire" fetchpriority="high" width="115" height="19" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="opensea" fetchpriority="high" width="127" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																	<li class="flex justify-center items-center">
+																		<div class="relative"><img alt="etsy" fetchpriority="high" width="48" height="23" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="rfm-marquee" style="--play: running; --direction: normal; --duration: 0s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+													<div class="rfm-child" style="--transform: none;">
+														<div class="relative grid text-white">
+															<ul class="items-center justify-center md:gap-y-16 justify-between flex lg:grid-cols-7 md:grid-cols-7 sm:grid-cols-4 grid-cols-4 gap-12 gap-y-10">
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="openai" fetchpriority="high" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="cohere" fetchpriority="high" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="nvidia" fetchpriority="high" width="100" height="18" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fnvidia.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="adept" fetchpriority="high" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="character ai" fetchpriority="high" width="129" height="31" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcharacterai.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="usarmy" fetchpriority="high" width="40" height="40" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fusarmy.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="airforce" fetchpriority="high" width="65" height="51" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fairforce.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="defense innovation unit" fetchpriority="high" width="120" height="14" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fdefense-innovation-unit.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="cdao" fetchpriority="high" width="113" height="30" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fcdao.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="microsoft" fetchpriority="high" width="100" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmicrosoft.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="meta" fetchpriority="high" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="general-motors" fetchpriority="high" width="36" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fgeneral-motors.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="toyota" fetchpriority="high" width="76" height="25" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Ftoyota.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="fox" fetchpriority="high" width="71" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffox.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="accenture" fetchpriority="high" width="111" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Faccenture.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="koch logo" fetchpriority="high" width="130" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fkoch.png&amp;w=320&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="brex" fetchpriority="high" width="72" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fbrex.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="flexport" fetchpriority="high" width="80" height="18" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fflexport.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="instacart" fetchpriority="high" width="111" height="22" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Finstacart.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="faire" fetchpriority="high" width="115" height="19" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Ffaire.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="opensea" fetchpriority="high" width="127" height="29" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fopensea.png&amp;w=256&amp;q=100" style="color: transparent;"></div>
+																</li>
+																<li class="flex justify-center items-center">
+																	<div class="relative"><img alt="etsy" fetchpriority="high" width="48" height="23" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=48&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=96&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fetsy.png&amp;w=96&amp;q=100" style="color: transparent;"></div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+			<section id="" class="py-18 lg:py-20 bg-transparent pt-0 lg:pt-0 pb-0 lg:pb-0 overflow-hidden">
+				<div class="container relative">
+					<div>
+						<div class="keen-slider !overflow-visible cursor-grab h-[140px] sm:h-[167px] xl:h-[192px] pt-1 opacity-100 visible"><button class="events_event-card__utnzH keen-slider__slide group rounded-2xl relative text-left !opacity-100 !visible focus-visible:outline outline-[rgba(255,255,255,0.64)] outline-offset-[3px] bg-white/[0.01]" style="opacity: 1; visibility: inherit; transform: translate3d(0px, 0px, 0px); min-width: 467.2px; max-width: 467.2px;">
+								<div class="flex items-center justify-start h-full transition-colors bg-[#D1AAD7]/[0.01]"><img alt="Eric Schmidt profile picture" loading="lazy" width="190" height="190" decoding="async" data-nimg="1" class="max-w-[140px] w-full sm:max-w-[150px] mt-auto xl:max-w-max -mb-2 sm:mb-0" style="color:transparent" sizes="(min-width: 1280px) 190px, (min-width: 640px) 150px, 140px" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd40755d265dc2e22c03619f0fcd1a00b.png&amp;w=1920&amp;q=75">
+									<div class="flex flex-col pr-2.5 sm:pr-4 lg:pr-10 -ml-3 sm:ml-0">
+										<p class="mb-1 text-xs font-medium sm:text-sm text-scale-lightmauve">Tech Talk</p>
+										<p class="font-aeonik text-lg leading-6 sm:text-xl lg:text-2xl sm:leading-[111%] mb-3 sm:mb-6 lg:mb-2 line-clamp-2">Navigating an AI-Enabled Future</p>
+										<p class="text-xs font-medium sm:text-sm text-white/60">by <!-- -->Eric Schmidt</p>
+									</div>
+								</div>
+								<div role="none" class="absolute items-center duration-150 overflow-hidden justify-center w-6 h-6 group-hover:bg-white bg-white/10 border group-hover:border-white transition-colors ease-linear border-white/[0.13] flex rounded-full pointer-events-none right-3 bottom-3 sm:right-4 sm:bottom-4 sm:w-10 sm:h-10"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 overflow-visible md:w-4 md:h-4" xml:space="preserve">
+										<path class="transition-colors duration-150 ease-linear group-hover:fill-black" d="M12.5 7.1 4.6 2.4C4 2.1 3 2.4 3 3.4v9.3c0 .6.5 1.1 1.1 1.1.2 0 .4-.1.5-.2L12.5 9c.5-.3.7-1 .4-1.5-.1-.2-.3-.3-.4-.4z" fill="#fff"></path>
+									</svg></div>
+							</button><button class="events_event-card__utnzH keen-slider__slide group rounded-2xl relative text-left !opacity-100 !visible focus-visible:outline outline-[rgba(255,255,255,0.64)] outline-offset-[3px] bg-white/[0.01]" style="opacity: 1; visibility: inherit; transform: translate3d(32px, 0px, 0px); min-width: 467.2px; max-width: 467.2px;">
+								<div class="flex items-center justify-start h-full transition-colors bg-[#D1AAD7]/[0.01]"><img alt="Fei Fei Li profile picture" loading="lazy" width="190" height="190" decoding="async" data-nimg="1" class="max-w-[140px] w-full sm:max-w-[150px] mt-auto xl:max-w-max -mb-2 sm:mb-0" style="color:transparent" sizes="(min-width: 1280px) 190px, (min-width: 640px) 150px, 140px" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F4b2f2a1bfbeef76185a3bea1f80614e4.png&amp;w=1920&amp;q=75">
+									<div class="flex flex-col pr-2.5 sm:pr-4 lg:pr-10 -ml-3 sm:ml-0">
+										<p class="mb-1 text-xs font-medium sm:text-sm text-scale-lightmauve">Tech Talk</p>
+										<p class="font-aeonik text-lg leading-6 sm:text-xl lg:text-2xl sm:leading-[111%] mb-3 sm:mb-6 lg:mb-2 line-clamp-2">Understanding &amp; Interacting With The Real World</p>
+										<p class="text-xs font-medium sm:text-sm text-white/60">by <!-- -->Fei Fei Li</p>
+									</div>
+								</div>
+								<div role="none" class="absolute items-center duration-150 overflow-hidden justify-center w-6 h-6 group-hover:bg-white bg-white/10 border group-hover:border-white transition-colors ease-linear border-white/[0.13] flex rounded-full pointer-events-none right-3 bottom-3 sm:right-4 sm:bottom-4 sm:w-10 sm:h-10"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 overflow-visible md:w-4 md:h-4" xml:space="preserve">
+										<path class="transition-colors duration-150 ease-linear group-hover:fill-black" d="M12.5 7.1 4.6 2.4C4 2.1 3 2.4 3 3.4v9.3c0 .6.5 1.1 1.1 1.1.2 0 .4-.1.5-.2L12.5 9c.5-.3.7-1 .4-1.5-.1-.2-.3-.3-.4-.4z" fill="#fff"></path>
+									</svg></div>
+							</button><button class="events_event-card__utnzH keen-slider__slide group rounded-2xl relative text-left !opacity-100 !visible focus-visible:outline outline-[rgba(255,255,255,0.64)] outline-offset-[3px] bg-white/[0.01]" style="opacity: 1; visibility: inherit; transform: translate3d(64px, 0px, 0px); min-width: 467.2px; max-width: 467.2px;">
+								<div class="flex items-center justify-start h-full transition-colors bg-[#D1AAD7]/[0.01]"><img alt="Nat Friedman profile picture" loading="lazy" width="190" height="190" decoding="async" data-nimg="1" class="max-w-[140px] w-full sm:max-w-[150px] mt-auto xl:max-w-max -mb-2 sm:mb-0" style="color:transparent" sizes="(min-width: 1280px) 190px, (min-width: 640px) 150px, 140px" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F0dcd88c0c858b105b16a04c9e6a05bb1.png&amp;w=1920&amp;q=75">
+									<div class="flex flex-col pr-2.5 sm:pr-4 lg:pr-10 -ml-3 sm:ml-0">
+										<p class="mb-1 text-xs font-medium sm:text-sm text-scale-lightmauve">Tech Talk</p>
+										<p class="font-aeonik text-lg leading-6 sm:text-xl lg:text-2xl sm:leading-[111%] mb-3 sm:mb-6 lg:mb-2 line-clamp-2">Building AI-Native Products &amp; What’s Next For AI</p>
+										<p class="text-xs font-medium sm:text-sm text-white/60">by <!-- -->Nat Friedman</p>
+									</div>
+								</div>
+								<div role="none" class="absolute items-center duration-150 overflow-hidden justify-center w-6 h-6 group-hover:bg-white bg-white/10 border group-hover:border-white transition-colors ease-linear border-white/[0.13] flex rounded-full pointer-events-none right-3 bottom-3 sm:right-4 sm:bottom-4 sm:w-10 sm:h-10"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 overflow-visible md:w-4 md:h-4" xml:space="preserve">
+										<path class="transition-colors duration-150 ease-linear group-hover:fill-black" d="M12.5 7.1 4.6 2.4C4 2.1 3 2.4 3 3.4v9.3c0 .6.5 1.1 1.1 1.1.2 0 .4-.1.5-.2L12.5 9c.5-.3.7-1 .4-1.5-.1-.2-.3-.3-.4-.4z" fill="#fff"></path>
+									</svg></div>
+							</button><button class="events_event-card__utnzH keen-slider__slide group rounded-2xl relative text-left !opacity-100 !visible focus-visible:outline outline-[rgba(255,255,255,0.64)] outline-offset-[3px] bg-white/[0.01]" style="opacity: 1; visibility: inherit; transform: translate3d(96px, 0px, 0px); min-width: 467.2px; max-width: 467.2px;">
+								<div class="flex items-center justify-start h-full transition-colors bg-[#D1AAD7]/[0.01]"><img alt="Greg Brockman profile picture" loading="lazy" width="190" height="190" decoding="async" data-nimg="1" class="max-w-[140px] w-full sm:max-w-[150px] mt-auto xl:max-w-max -mb-2 sm:mb-0" style="color:transparent" sizes="(min-width: 1280px) 190px, (min-width: 640px) 150px, 140px" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F6f46d88d2d4344b170b2870c7fea3ac6.png&amp;w=1920&amp;q=75">
+									<div class="flex flex-col pr-2.5 sm:pr-4 lg:pr-10 -ml-3 sm:ml-0">
+										<p class="mb-1 text-xs font-medium sm:text-sm text-scale-lightmauve">Tech Talk</p>
+										<p class="font-aeonik text-lg leading-6 sm:text-xl lg:text-2xl sm:leading-[111%] mb-3 sm:mb-6 lg:mb-2 line-clamp-2">The Future of LLMs, Foundation &amp; Generative Models</p>
+										<p class="text-xs font-medium sm:text-sm text-white/60">by <!-- -->Greg Brockman</p>
+									</div>
+								</div>
+								<div role="none" class="absolute items-center duration-150 overflow-hidden justify-center w-6 h-6 group-hover:bg-white bg-white/10 border group-hover:border-white transition-colors ease-linear border-white/[0.13] flex rounded-full pointer-events-none right-3 bottom-3 sm:right-4 sm:bottom-4 sm:w-10 sm:h-10"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 overflow-visible md:w-4 md:h-4" xml:space="preserve">
+										<path class="transition-colors duration-150 ease-linear group-hover:fill-black" d="M12.5 7.1 4.6 2.4C4 2.1 3 2.4 3 3.4v9.3c0 .6.5 1.1 1.1 1.1.2 0 .4-.1.5-.2L12.5 9c.5-.3.7-1 .4-1.5-.1-.2-.3-.3-.4-.4z" fill="#fff"></path>
+									</svg></div>
+							</button><button class="events_event-card__utnzH keen-slider__slide group rounded-2xl relative text-left !opacity-100 !visible focus-visible:outline outline-[rgba(255,255,255,0.64)] outline-offset-[3px] bg-white/[0.01]" style="opacity: 1; visibility: inherit; transform: translate3d(128px, 0px, 0px); min-width: 467.2px; max-width: 467.2px;">
+								<div class="flex items-center justify-start h-full transition-colors bg-[#D1AAD7]/[0.01]"><img alt="Thomas Kurian profile picture" loading="lazy" width="190" height="190" decoding="async" data-nimg="1" class="max-w-[140px] w-full sm:max-w-[150px] mt-auto xl:max-w-max -mb-2 sm:mb-0" style="color:transparent" sizes="(min-width: 1280px) 190px, (min-width: 640px) 150px, 140px" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=16&amp;q=75 16w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=32&amp;q=75 32w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=48&amp;q=75 48w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=64&amp;q=75 64w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=96&amp;q=75 96w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=128&amp;q=75 128w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=256&amp;q=75 256w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=320&amp;q=75 320w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=384&amp;q=75 384w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=768&amp;q=75 768w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=992&amp;q=75 992w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F850c4ee88cd01418e23da52ac0c2ee1c.png&amp;w=1920&amp;q=75">
+									<div class="flex flex-col pr-2.5 sm:pr-4 lg:pr-10 -ml-3 sm:ml-0">
+										<p class="mb-1 text-xs font-medium sm:text-sm text-scale-lightmauve">Tech Talk</p>
+										<p class="font-aeonik text-lg leading-6 sm:text-xl lg:text-2xl sm:leading-[111%] mb-3 sm:mb-6 lg:mb-2 line-clamp-2">The State of AI Adoption</p>
+										<p class="text-xs font-medium sm:text-sm text-white/60">by <!-- -->Thomas Kurian</p>
+									</div>
+								</div>
+								<div role="none" class="absolute items-center duration-150 overflow-hidden justify-center w-6 h-6 group-hover:bg-white bg-white/10 border group-hover:border-white transition-colors ease-linear border-white/[0.13] flex rounded-full pointer-events-none right-3 bottom-3 sm:right-4 sm:bottom-4 sm:w-10 sm:h-10"><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 overflow-visible md:w-4 md:h-4" xml:space="preserve">
+										<path class="transition-colors duration-150 ease-linear group-hover:fill-black" d="M12.5 7.1 4.6 2.4C4 2.1 3 2.4 3 3.4v9.3c0 .6.5 1.1 1.1 1.1.2 0 .4-.1.5-.2L12.5 9c.5-.3.7-1 .4-1.5-.1-.2-.3-.3-.4-.4z" fill="#fff"></path>
+									</svg></div>
+							</button></div>
+					</div>
+				</div>
+			</section>
+			<section id="" class="py-18 lg:py-20 bg-transparent relative lg:pb-8">
+				<div class="container relative">
+					<div class="flex flex-col max-w-3xl mx-auto items-center justify-center text-center mb-10 md:mb-20 md:mt-12 !mb-16">
+						<div class="mb-5 lg:mb-5 overflow-hidden tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase bg-white bg-opacity-5 text-[#D1AAD7] rounded-full px-4 py-2"><span>AI for the Enterprise</span></div>
+						<h2 class="font-aeonik leading-snug lg:leading-[1.25] text-3xl md:text-4.5xl lg:text-5xl [text-wrap:balance]">Generative AI Architecture</h2>
+						<p class="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 lg:text-xl [text-wrap:balance]">Whether you’re building your own models or applying foundation models to your business, data remains the biggest bottleneck to AI.</p>
+						<div class="mt-8"><button style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px]">
+								<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--pink__gdR3d text-sm px-[30px] py-[14px]">Talk to a Generative AI Expert<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(200,139,196,0.4)]"></span>
+							</button></div>
+					</div>
+					<div class="flex justify-center flex-col mb-24 md:mb-40 xl:mb-16 sm:h-[700px] h-[590px] mx-auto xl:flex-row mt-28 xl:mt-0">
+						<div class="relative z-10 hidden w-full -mr-9 xl:inline-block xl:w-6/12 xl:min-w-[510px]">
+							<div class="absolute w-full -translate-y-1/2 top-1/2">
+								<div class="opacity-30 border-b group last:border-transparent border-white/10 group hover:border-white hover:last:border-white hover:opacity-100 transition-all duration-300 cursor-pointer">
+									<p class="w-full pt-6 pb-2 text-2xl leading-10 text-left text-white font-aeonik">Fine-Tuning and RLHF</p>
+									<p class="pb-6 overflow-hidden text-white transition-colors group-hover:text-white/70">Adapt best-in-class foundation models to your business and your specific data to build sustainable, successful AI programs and data from your enterprise.</p>
+								</div>
+								<div class="opacity-100 border-b group last:border-transparent border-white/10 group hover:border-white hover:last:border-white hover:opacity-100 transition-all duration-300 cursor-pointer">
+									<p class="w-full pt-6 pb-2 text-2xl leading-10 text-left text-white font-aeonik">Foundation Models</p>
+									<p class="pb-6 overflow-hidden text-white transition-colors group-hover:text-white/70">Scale partners or integrates with all of the leading AI models, from open-source to closed-source, including OpenAI, Anthropic, Google PaLM, Cohere, and more.</p>
+								</div>
+								<div class="opacity-30 border-b group last:border-transparent border-white/10 group hover:border-white hover:last:border-white hover:opacity-100 transition-all duration-300 cursor-pointer">
+									<p class="w-full pt-6 pb-2 text-2xl leading-10 text-left text-white font-aeonik">Enterprise Data</p>
+									<p class="pb-6 overflow-hidden text-white transition-colors group-hover:text-white/70">Scale's Data Engine enables you to integrate your enterprise data into the fold of these models, providing the base for long-term strategic differentiation.</p>
+								</div>
+							</div>
+						</div>
+						<div class="relative inline-block w-full -mb-3 xl:h-full xl:mb-10 xl:mx-auto">
+							<div class="keen-slider !overflow-visible xl:absolute pb-6 xl:!hidden"><img alt="Data model" loading="lazy" width="334" height="307" decoding="async" data-nimg="1" class="object-contain w-full h-auto keen-slider__slide" style="color: transparent; transform: translate3d(12.1875px, 0px, 0px); min-width: 576px; max-width: 576px;" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=320&amp;q=100 320w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=384&amp;q=100 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=768&amp;q=100 768w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=992&amp;q=100 992w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=1200&amp;q=100 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=1920&amp;q=100 1920w" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhole-model.1ae9c53e.png&amp;w=1920&amp;q=100"><img alt="RLHF layer from data model" loading="lazy" width="334" height="307" decoding="async" data-nimg="1" class="object-contain w-full h-auto keen-slider__slide" style="color: transparent; transform: translate3d(76.1875px, 0px, 0px); min-width: 576px; max-width: 576px;" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=320&amp;q=100 320w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=384&amp;q=100 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=768&amp;q=100 768w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=992&amp;q=100 992w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=1200&amp;q=100 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=1920&amp;q=100 1920w" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Frlhf.471199f7.png&amp;w=1920&amp;q=100"><img alt="Foundation models layer from data model" loading="lazy" width="334" height="307" decoding="async" data-nimg="1" class="object-contain w-full h-auto keen-slider__slide" style="color: transparent; transform: translate3d(140.188px, 0px, 0px); min-width: 576px; max-width: 576px;" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=320&amp;q=100 320w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=384&amp;q=100 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=768&amp;q=100 768w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=992&amp;q=100 992w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=1200&amp;q=100 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=1920&amp;q=100 1920w" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffoundation-models.a4b3a3f7.png&amp;w=1920&amp;q=100"><img alt="Enterprise quality layer from data model" loading="lazy" width="334" height="307" decoding="async" data-nimg="1" class="object-contain w-full h-auto keen-slider__slide" style="color: transparent; transform: translate3d(204.188px, 0px, 0px); min-width: 576px; max-width: 576px;" sizes="100vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=320&amp;q=100 320w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=384&amp;q=100 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=768&amp;q=100 768w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=992&amp;q=100 992w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=1200&amp;q=100 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=1920&amp;q=100 1920w" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-engine.b1690cd3.png&amp;w=1920&amp;q=100"></div>
+						</div>
+						<div class="px-7 w-screen left-1/2 -translate-x-1/2 relative sm:w-auto sm:px-0 xl:mb-6 xl:hidden">
+							<div class="keen-slider !overflow-visible pb-24">
+								<div class="space-y-4 keen-slider__slide active" style="transform: translate3d(12.1875px, 0px, 0px); min-width: 576px; max-width: 576px;">
+									<p class="text-2xl leading-10 font-aeonik">Enterprise GenAI Platform</p>
+									<p class="text-white/70">The only full-stack GenAI Platform for your Enterprise, powered by the Scale Data Engine.</p>
+								</div>
+								<div class="space-y-4 keen-slider__slide" style="transform: translate3d(76.1875px, 0px, 0px); min-width: 576px; max-width: 576px;">
+									<p class="text-2xl leading-10 font-aeonik">Fine-Tuning and RLHF</p>
+									<p class="text-white/70">Adapt best-in-class foundation models to your business and your specific data to build sustainable, successful AI programs and data from your enterprise.</p>
+								</div>
+								<div class="space-y-4 keen-slider__slide" style="transform: translate3d(140.188px, 0px, 0px); min-width: 576px; max-width: 576px;">
+									<p class="text-2xl leading-10 font-aeonik">Foundation Models</p>
+									<p class="text-white/70">Scale partners or integrates with all of the leading AI models, from open-source to closed-source, including OpenAI, Anthropic, Google PaLM, Cohere, and more.</p>
+								</div>
+								<div class="space-y-4 keen-slider__slide" style="transform: translate3d(204.188px, 0px, 0px); min-width: 576px; max-width: 576px;">
+									<p class="text-2xl leading-10 font-aeonik">Enterprise Data</p>
+									<p class="text-white/70">Scale's Data Engine enables you to integrate your enterprise data into the fold of these models, providing the base for long-term strategic differentiation.</p>
+								</div>
+							</div>
+						</div>
+						<div class="relative z-50 mx-auto -mt-16 lg:-mt-10 xl:hidden"><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white w-4 sm:w-5 md:w-6"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button></div>
+					</div>
+					<p class="max-w-max mb-10 md:mb-12 text-center mx-auto uppercase leading-[1.70] text-xs px-3 sm:px-0 md:text-sm tracking-[4px]">GENERATIVE AI PROVIDERS WE PARTNER&nbsp;WITH:</p>
+					<div class="hidden md:block">
+						<ul class="items-center justify-center flex gap-4">
+							<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+								<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+								<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="openai" loading="lazy" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100">
+							</li>
+							<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+								<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+								<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="adept" loading="lazy" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100">
+							</li>
+							<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+								<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+								<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="meta" loading="lazy" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100">
+							</li>
+							<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+								<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+								<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="cohere" loading="lazy" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100">
+							</li>
+							<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+								<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+								<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="anthropic" loading="lazy" width="126" height="15" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" style="color:transparent" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100">
+							</li>
+						</ul>
+					</div>
+					<div class="relative w-screen -translate-x-1/2 md:hidden left-1/2">
+						<div class="rfm-marquee-container space-x-6" style="--pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
+							<div class="rfm-marquee" style="--play: running; --direction: normal; --duration: 0s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+								<div class="rfm-initial-child-container">
+									<div class="rfm-child" style="--transform: none;">
+										<ul class="items-center justify-center flex gap-4">
+											<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+												<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+												<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="openai" loading="lazy" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100" style="color: transparent;">
+											</li>
+											<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+												<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+												<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="adept" loading="lazy" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100" style="color: transparent;">
+											</li>
+											<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+												<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+												<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="meta" loading="lazy" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;">
+											</li>
+											<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+												<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+												<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="cohere" loading="lazy" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100" style="color: transparent;">
+											</li>
+											<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+												<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+												<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="anthropic" loading="lazy" width="126" height="15" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100" style="color: transparent;">
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="rfm-marquee" style="--play: running; --direction: normal; --duration: 0s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+								<div class="rfm-child" style="--transform: none;">
+									<ul class="items-center justify-center flex gap-4">
+										<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+											<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+											<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="openai" loading="lazy" width="108" height="28" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fopenai.png&amp;w=256&amp;q=100" style="color: transparent;">
+										</li>
+										<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+											<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+											<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="adept" loading="lazy" width="75" height="36" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fadept.png&amp;w=256&amp;q=100" style="color: transparent;">
+										</li>
+										<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+											<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+											<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="meta" loading="lazy" width="90" height="20" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=96&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fmeta.png&amp;w=256&amp;q=100" style="color: transparent;">
+										</li>
+										<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+											<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+											<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="cohere" loading="lazy" width="140" height="24" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=256&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Finvestors%2Fcohere.png&amp;w=320&amp;q=100" style="color: transparent;">
+										</li>
+										<li class="overflow-hidden relative flex items-center justify-center w-[230px] h-28 rounded-2xl">
+											<div class="absolute bg-black/40 inset-px rounded-2xl"></div>
+											<div class="absolute inset-0 border border-white/15 rounded-2xl"></div><img alt="anthropic" loading="lazy" width="126" height="15" decoding="async" data-nimg="1" class="logo-grid_full-white__9DeNP opacity-100 relative" srcset="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=128&amp;q=100 1x, /_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Flogos%2Fcustomers%2Fanthropic.png&amp;w=256&amp;q=100" style="color: transparent;">
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="build-ai" class="py-18 lg:py-20 bg-transparent relative">
+				<div class="container relative">
+					<div class="select-none pointer-events-none absolute -top-[10%] -bottom-[10%] left-[5%] right-[5%] opacity-50 bg-gradient_background__GEkO8"></div>
+					<div class="flex flex-col max-w-3xl mx-auto items-center justify-center text-center mb-10 md:mb-20 md:mt-12 relative z-10 !mb-16">
+						<div class="mb-5 lg:mb-5 overflow-hidden tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase bg-white bg-opacity-5 text-[#D1AAD7] rounded-full px-4 py-2"><span>Build AI</span></div>
+						<h2 class="font-aeonik leading-snug lg:leading-[1.25] text-3xl md:text-4.5xl lg:text-5xl [text-wrap:balance]">Scale Data Engine</h2>
+						<p class="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 lg:text-xl [text-wrap:balance]">For AI teams, Scale Data Engine improves your models by improving your data.</p>
+					</div>
+					<div class="space-y-6 lg:space-y-16">
+						<div class="box_box__wrapper__jXRQR">
+							<div class="flex 3xl:py-[95px] z-10 relative xl:py-20 md:p-10 lg:py-12 p-6 flex-col-reverse rounded-2xl lg:rounded-[34px] overflow-hidden md:overflow-visible lg:flex-row-reverse xl:pr-20">
+								<div class="xl:flex xl:w-auto w-full flex-col justify-center lg:items-start xl:min-w-[466px] xl:max-w-[466px] flex-1">
+									<p class="font-aeonik text-3.5xl xl:text-4xl mb-2 text-white">RLHF</p>
+									<p class="text-zinc-400">Powering the next generation of Generative AI</p>
+									<p class="my-8 text-[#F5F5F5]">Scale Generative AI Data Engine powers the most advanced LLMs and generative models in the world through world-class RLHF, data generation, model evaluation, safety, and&nbsp;alignment.</p>
+									<div class="flex items-center gap-x-3 xs:gap-x-6"><a style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/rlhf">
+											<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--pink__gdR3d text-sm px-[30px] py-[14px]">Label My Data<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(200,139,196,0.4)]"></span>
+										</a></div>
+								</div>
+								<div class="-m-3 md:mt-0 md:mx-0 relative lg:flex lg:-translate-x-10 3xl:-translate-x-14 transition-transform duration-1000 ease-out rounded-[10px] shadow-xl xl:shadow-super overflow-hidden lg:mb-0 mb-9 lg:w-1/2 xl:w-[649px] xl:h-[402px] select-none aspect-[649/402] min-w-full lg:min-w-[50%] xl:min-w-[unset] max-w-[calc(100%+24px)]">
+									<div class="overflow-hidden rounded-[10px] w-full relative aspect-[649/402] box_box__chat__AoICB">
+										<div class="grid grid-cols-3 p-2 sm:p-3 md:grid-cols-3">
+											<div class="flex space-x-[3px] sm:space-x-1.5">
+												<div class="w-1.5 sm:w-3 h-1.5 sm:h-3 bg-red-400 rounded-full"></div>
+												<div class="w-1.5 sm:w-3 h-1.5 sm:h-3 rounded-full bg-utility-yellow"></div>
+												<div class="w-1.5 sm:w-3 h-1.5 sm:h-3 rounded-full bg-utility-green"></div>
+											</div>
+											<div class="flex text-[7px] sm:text-base font-medium pt-2 justify-center text-neutral-200">AI Text Generator</div>
+											<div></div>
+										</div>
+										<div class="relative h-full px-6 py-3 space-y-1 text-xs sm:space-y-2 text-neutral-200">
+											<div class="flex px-1.5 md:pr-3 md:pl-[7px] md:py-[4.5px] w-fit py-[3px] space-x-1 sm:space-x-2 bg-white/5 border border-white border-opacity-[0.16] items-center rounded-[18px]"><img class="inline-block h-2 sm:w-[18px] w-2 sm:h-[18px] rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+												<div class="transition-opacity text-[7px] sm:text-sm">Why is human feedback necessary for accurate llm responses?</div>
+											</div>
+											<div class="flex flex-col items-end space-y-2">
+												<div class="rounded-[18px] p-[0.5px] sm:p-px transition-all ease duration-150 opacity-0 scale-50" style="background: linear-gradient(97deg, rgb(255, 255, 255), rgb(154, 119, 255), rgb(77, 125, 247), rgb(225, 81, 255), rgb(255, 247, 89));">
+													<div class="rounded-[18px] w-full flex items-center space-x-1 sm:space-x-2 bg-black p-[3px] h-[19px] md:h-auto">
+														<div class="px-1.5 md:pl-3 md:pr-[7px] md:py-[3px] w-fit py-[3px] transition-opacity">...</div><img class="inline-block w-2 h-2 rounded-full sm:w-[18px] sm:h-[18px]" src="/static/images/icons/llm-1.png" alt="">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="absolute bottom-0 z-10 w-full">
+											<div class="after:bg-[linear-gradient(180deg,_rgba(243,_238,_255,_0)_0%,_rgba(243,_238,_255,_0.04)_100%)] after:absolute after:inset-0 after:content-[''] before:border before:border-white/5 before:inset-0 before:absolute relative flex flex-col p-2 pb-[14px] sm:pb-6 md:pb-9 m-1 sm:m-2 space-y-2.5 sm:space-y-6 text-sm before:rounded-sm before:sm:rounded-md rounded-sm sm:rounded-md text-neutral-700 transition ease-in-out duration-500 transform opacity-0 translate-y-full scale-50" style="">
+												<p class="text-[6px] sm:text-[13px] sm:leading-6 text-center text-scale-mauve md:pt-6">Human Feedback Ranking</p>
+												<div class="flex justify-center">
+													<div class="flex flex-col items-center space-y-1 sm:space-y-[7px]">
+														<div class="text-[7px] px-1 py-0.5 md:px-3 md:py-1 rounded-full w-fit bg-black/25 border border-white border-opacity-[0.16] text-neutral-200 transform transition duration-500 ease-in-out text-right md:text-sm">LLMs are trained by garden gnomes, who are known to lie</div>
+														<div class="text-[7px] px-1 py-0.5 md:px-3 md:py-1 rounded-full w-fit bg-black/25 border border-white border-opacity-[0.16] text-neutral-200 transform transition-all duration-500 ease-in-out text-right md:text-sm">LLMs are not always truthful or aligned with human preferences</div>
+														<div class="text-[7px] px-1 py-0.5 md:px-3 md:py-1 rounded-full w-fit bg-black/25 border border-white border-opacity-[0.16] text-neutral-200 transform transition duration-500 ease-in-out text-center md:text-sm">Humans enjoy giving opinions. It makes them feel important</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box_box__wrapper__jXRQR">
+							<div class="flex 3xl:py-[95px] z-10 relative xl:py-20 md:p-10 lg:py-12 p-6 flex-col-reverse rounded-2xl lg:rounded-[34px] overflow-hidden md:overflow-visible lg:flex-row xl:pl-20">
+								<div class="xl:flex xl:w-auto w-full flex-col justify-center lg:items-start xl:min-w-[466px] xl:max-w-[466px] flex-1">
+									<p class="font-aeonik text-3.5xl xl:text-4xl mb-2 text-white">Data Labeling</p>
+									<p class="text-zinc-400">The best quality data to fuel the best performing models</p>
+									<div class="mt-8 lg:mt-10">
+										<div>
+											<div class="flex flex-col-reverse items-start lg:flex-row">
+												<div class="relative no-scrollbar sm:mx-0 lg:w-[47%] overflow-visible xl:w-auto max-w-full">
+													<div class="px-8 mb-8 -mx-8 overflow-x-auto lg:overflow-x-visible lg:overflow-y-visible no-scrollbar">
+														<div class="tabs_tabs__qQMp5" role="tablist" aria-orientation="horizontal">
+															<div class="absolute border rounded-full bg-white/10 border-white/10" style="height: 38px; width: 51px; left: 4px;"></div><button class="rounded-full py-2 px-4 relative transition-colors duration-200 focus:outline-none after:w-px after:transition-transform after:duration-100 after:absolute after:bg-white after:right-0 after:bg-opacity-[0.15] after:h-1/2 after:inline-block after:top-1/2 after:-translate-y-1/2 after:scale-y-0 text-white" id="headlessui-tabs-tab-:R6bdnjuqd6:" role="tab" type="button" aria-selected="true" tabindex="0" data-headlessui-state="selected" data-selected="" aria-controls="headlessui-tabs-panel-:Rddnjuqd6:">3D</button><button class="rounded-full py-2 px-4 relative transition-colors duration-200 focus:outline-none after:w-px after:transition-transform after:duration-100 after:absolute after:bg-white after:right-0 after:bg-opacity-[0.15] after:h-1/2 after:inline-block after:top-1/2 after:-translate-y-1/2 text-white/50" id="headlessui-tabs-tab-:Rabdnjuqd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="" aria-controls="headlessui-tabs-panel-:Rldnjuqd6:">Image</button><button class="rounded-full py-2 px-4 relative transition-colors duration-200 focus:outline-none after:w-px after:transition-transform after:duration-100 after:absolute after:bg-white after:right-0 after:bg-opacity-[0.15] after:h-1/2 after:inline-block after:top-1/2 after:-translate-y-1/2 text-white/50" id="headlessui-tabs-tab-:Rebdnjuqd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="" aria-controls="headlessui-tabs-panel-:Rtdnjuqd6:">Mapping</button><button class="rounded-full py-2 px-4 relative transition-colors duration-200 focus:outline-none after:w-px after:transition-transform after:duration-100 after:absolute after:bg-white after:right-0 after:bg-opacity-[0.15] after:h-1/2 after:inline-block after:top-1/2 after:-translate-y-1/2 text-white/50" id="headlessui-tabs-tab-:Ribdnjuqd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="" aria-controls="headlessui-tabs-panel-:R15dnjuqd6:">Text</button><button class="rounded-full py-2 px-4 relative transition-colors duration-200 focus:outline-none text-white/50" id="headlessui-tabs-tab-:Rmbdnjuqd6:" role="tab" type="button" aria-selected="false" tabindex="-1" data-headlessui-state="" aria-controls="headlessui-tabs-panel-:R1ddnjuqd6:">Audio</button>
+														</div>
+													</div>
+													<p class="mb-8 text-[#F5F5F5]">Scale has pioneered in the data labeling industry by combining AI-based techniques with human-in-the-loop, delivering labeled data at unprecedented quality, scalability, and efficiency.</p>
+													<div class="!gap-x-3 xs:!gap-x-6 flex items-center gap-x-6"><a style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="https://dashboard.scale.com/signup?product=rapid&amp;redirect_url=%2Frapid">
+															<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--pink__gdR3d text-sm px-[30px] py-[14px]">Label My Data<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(200,139,196,0.4)]"></span>
+														</a></div>
+												</div>
+												<div class="w-full lg:w-auto">
+													<div id="headlessui-tabs-panel-:Rddnjuqd6:" role="tabpanel" tabindex="0" data-headlessui-state="selected" data-selected="" aria-labelledby="headlessui-tabs-tab-:R6bdnjuqd6:">
+														<div class="bg-black relative w-full border border-[#D1AAD7]/[0.16] lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-10 3xl:translate-x-14 transition-transform duration-1000 ease-out rounded-[10px] shadow-xl xl:shadow-super overflow-hidden lg:mb-0 mb-9 lg:w-1/2 xl:w-[649px] xl:h-[402px] select-none aspect-[649/402] min-w-full lg:min-w-[50%] xl:min-w-[unset] max-w-max">
+															<div class="w-full h-full"><img alt="" loading="lazy" width="1461" height="905" decoding="async" data-nimg="1" class="object-cover w-full h-full" style="color:transparent" sizes="(min-width: 1024px) 47vw, 98vw" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=256&amp;q=75 256w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=320&amp;q=75 320w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=384&amp;q=75 384w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=768&amp;q=75 768w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=992&amp;q=75 992w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=1920&amp;q=75 1920w" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flidar-iframe-placeholder.14b43055.jpeg&amp;w=1920&amp;q=75"></div>
+														</div>
+													</div><span aria-hidden="true" id="headlessui-tabs-panel-:Rldnjuqd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0" aria-labelledby="headlessui-tabs-tab-:Rabdnjuqd6:"></span><span aria-hidden="true" id="headlessui-tabs-panel-:Rtdnjuqd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0" aria-labelledby="headlessui-tabs-tab-:Rebdnjuqd6:"></span><span aria-hidden="true" id="headlessui-tabs-panel-:R15dnjuqd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0" aria-labelledby="headlessui-tabs-tab-:Ribdnjuqd6:"></span><span aria-hidden="true" id="headlessui-tabs-panel-:R1ddnjuqd6:" role="tabpanel" tabindex="-1" style="position:fixed;top:1px;left:1px;width:1px;height:0;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0" aria-labelledby="headlessui-tabs-tab-:Rmbdnjuqd6:"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box_box__wrapper__jXRQR">
+							<div class="flex 3xl:py-[95px] z-10 relative xl:py-20 md:p-10 lg:py-12 p-6 flex-col-reverse rounded-2xl lg:rounded-[34px] overflow-hidden md:overflow-visible lg:flex-row-reverse xl:pr-20">
+								<div class="xl:flex xl:w-auto w-full flex-col justify-center lg:items-start xl:min-w-[466px] xl:max-w-[466px] flex-1">
+									<p class="font-aeonik text-3.5xl xl:text-4xl mb-2 text-white">Data Curation</p>
+									<p class="text-zinc-400">Unearth the most valuable data by intelligently managing your dataset</p>
+									<p class="my-8 text-[#F5F5F5]">Scale’s suite of dataset management, testing, model evaluation, and model comparison tools enable you to “label what matters.” Maximize the value of your labeling budget by identifying the highest value data to label, even without ground truth&nbsp;labels.</p>
+									<div class="flex items-center gap-x-3 xs:gap-x-6"><a style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="https://dashboard.scale.com/nucleus">
+											<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--pink__gdR3d text-sm px-[30px] py-[14px]">Curate My Data<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(200,139,196,0.4)]"></span>
+										</a></div>
+								</div>
+								<div class="-m-3 md:mt-0 md:mx-0 relative lg:flex lg:-translate-x-10 3xl:-translate-x-14 transition-transform duration-1000 ease-out rounded-[10px] shadow-xl xl:shadow-super overflow-hidden lg:mb-0 mb-9 lg:w-1/2 xl:w-[630px] xl:h-[420px] select-none aspect-[630/420] min-w-full lg:min-w-[50%] xl:min-w-[unset] max-w-[calc(100%+24px)]">
+									<div class="overflow-hidden rounded-[10px] w-full relative aspect-[630/420] box_box__chat__AoICB"><img alt="data-curation" loading="lazy" width="649" height="432" decoding="async" data-nimg="1" style="color:transparent;background-size:cover;background-position:50% 50%;background-repeat:no-repeat;background-image:url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 100 -1' result='s'/%3E%3CfeFlood x='0' y='0' width='100%25' height='100%25'/%3E%3CfeComposite operator='out' in='s'/%3E%3CfeComposite in2='SourceGraphic'/%3E%3CfeGaussianBlur stdDeviation='20'/%3E%3C/filter%3E%3Cimage width='100%25' height='100%25' x='0' y='0' preserveAspectRatio='none' style='filter: url(%23b);' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAMAAABPT11nAAAAM1BMVEXd5OfM4vOmqpuPk4P7//+uqZVRV2Lg4+e6r7p3e3FLSy5ef5NobkuUmodAcYSRlINvdWTI9XgcAAAAEXRSTlMRLXbHE4cWDAaAm4IsqItI4Z9mwywAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAArSURBVHicBcGJAQAgCMSwquCB//7TmsAa7icrdl/bMxNE7yGIMAkgVADjAxh1AOIi1u7aAAAAAElFTkSuQmCC'/%3E%3C/svg%3E&quot;)" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-curation.a2475705.png&amp;w=768&amp;q=100 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-curation.a2475705.png&amp;w=1920&amp;q=100 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdata-curation.a2475705.png&amp;w=1920&amp;q=100"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="" class="py-18 lg:py-20 bg-transparent pb-0 lg:pb-0 relative">
+				<div class="container lg:max-w-[1344px] relative">
+					<div class="select-none pointer-events-none absolute top-0 -left-[10%] -right-[10%] bottom-[9%] opacity-50 bg-gradient_background__GEkO8 bg-gradient_background-blue__fhjbE"></div>
+					<div class="flex flex-col max-w-3xl mx-auto items-center justify-center text-center mb-10 md:mb-20 md:mt-12 relative z-10 !mb-12 md:!mb-16">
+						<div class="mb-5 lg:mb-5 overflow-hidden tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase bg-white bg-opacity-5 text-[#7B8FDD] rounded-full px-4 py-2"><span>Apply AI</span></div>
+						<h2 class="font-aeonik leading-snug lg:leading-[1.25] text-3xl md:text-4.5xl lg:text-5xl [text-wrap:balance]">Generative AI Applications</h2>
+						<p class="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 lg:text-xl [text-wrap:balance]">Easily Apply AI to your most challenging use cases with pre‑built applications that harness the power of customized LLMs.</p>
+					</div>
+					<div class="relative w-screen -translate-x-1/2 sm:w-auto left-1/2 px-7 sm:px-0">
+						<div class="keen-slider pb-20 !overflow-visible opacity-100 visible"><a class="keen-slider__slide" href="/donovan" style="transform: translate3d(0px, 0px, 0px); min-width: 624px; max-width: 624px;">
+								<div style="--border-opacity:0.16" class="box_box__wrapper__7yWdR box_box__wrapper--hoverable___A4_d box_box-blue__FPEs4 before:z-20">
+									<div class="!pt-9 md:!pt-12 !pb-0 !overflow-hidden max-h-[436px] lg:h-[540px] min-h-[450px] lg:!min-h-[540px] z-10 3xl:py-[95px] z-10 relative lg:items-center xl:py-20 md:p-10 lg:py-12 p-6 pt-3 rounded-2xl overflow-hidden md:overflow-visible">
+										<p class="uppercase leading-4 text-xs tracking-[4px] mb-4 lg:mb-6 z-10 relative">Scale Donovan</p>
+										<p class="md:text-[1.625rem] text-3.5xl leading-tight md:leading-8 mb-2 font-aeonik z-10 relative">AI-Powered Decision-Making for Defense</p>
+										<p class="z-10 mb-8 leading-6 md:mb-18 text-zinc-400">AI-powered decision-making support: plan, analyze, and act in minutes.</p><img alt="Scale Donovan" loading="lazy" width="616" height="333" decoding="async" data-nimg="1" class="absolute left-6 md:left-9 top-46 md:top-auto md:-bottom-32 lg:bottom-0 aspect-[436/276] w-full h-full md:h-auto overflow-hidden object-contain xl:-bottom-[85px] object-left-top" style="color:transparent" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdonovan.87a3b566.png&amp;w=768&amp;q=100 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdonovan.87a3b566.png&amp;w=1920&amp;q=100 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdonovan.87a3b566.png&amp;w=1920&amp;q=100">
+									</div>
+								</div>
+							</a><a class="keen-slider__slide" href="/genai-platform" style="transform: translate3d(32px, 0px, 0px); min-width: 624px; max-width: 624px;">
+								<div style="--border-opacity:0.16" class="box_box__wrapper__7yWdR box_box__wrapper--hoverable___A4_d box_box-blue__FPEs4 before:z-20">
+									<div class="!pt-9 md:!pt-12 !pb-0 !overflow-hidden max-h-[436px] lg:h-[540px] min-h-[450px] lg:!min-h-[540px] z-10 3xl:py-[95px] z-10 relative lg:items-center xl:py-20 md:p-10 lg:py-12 p-6 pt-3 rounded-2xl overflow-hidden md:overflow-visible">
+										<p class="uppercase leading-4 text-xs tracking-[4px] mb-4 lg:mb-6 z-10 relative">Scale Enterprise GenAI Platform</p>
+										<p class="md:text-[1.625rem] text-3.5xl leading-tight md:leading-8 mb-2 font-aeonik z-10 relative">AI for the Enterprise</p>
+										<p class="z-10 mb-8 leading-6 md:mb-18 text-zinc-400">Transform your data into customized enterprise-ready Generative AI applications.</p><img alt="Gen AI" loading="lazy" width="575" height="383" decoding="async" data-nimg="1" class="absolute left-6 md:left-9 top-46 md:top-auto md:-bottom-32 lg:bottom-0 aspect-[436/277] w-full h-full md:h-auto overflow-hidden object-contain xl:-bottom-[85px] object-left-top" style="color:transparent" srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgen-ai.dd6b8c76.png&amp;w=768&amp;q=100 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgen-ai.dd6b8c76.png&amp;w=1200&amp;q=100 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgen-ai.dd6b8c76.png&amp;w=1200&amp;q=100">
+									</div>
+								</div>
+							</a></div>
+					</div>
+					<div class="relative flex justify-center mx-auto lg:hidden -mt-14"><button type="button" class="py-2 px-1 sm:px-2" aria-label="Go to slide 1">
+							<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white w-4 sm:w-5 md:w-6"></div>
+						</button><button type="button" class="py-2 px-1 sm:px-2" aria-label="Go to slide 2">
+							<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+						</button></div>
+				</div>
+			</section>
+			<section class="ρd__all ρd__section ρmyEVz">
+				<div class="ρd__all ρd__div ρ_1WnrJ container">
+					<div class="flex flex-col max-w-3xl mx-auto items-center justify-center text-center mb-10 md:mb-20 md:mt-12 ρi ρic9M">
+						<div class="mb-5 lg:mb-5 overflow-hidden tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase bg-white bg-opacity-5 text-[#D1AAD7] rounded-lg md:rounded-full p-3"><span>LEARN HOW WE SERVE ENTERPRISES LARGE AND SMALL</span></div>
+						<h2 class="font-aeonik leading-snug lg:leading-[1.25] text-3xl md:text-4.5xl lg:text-5xl [text-wrap:balance]">Case Studies &amp; Resources</h2>
+						<p class="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 lg:text-xl [text-wrap:balance]">We've worked with the world's leading AI teams for years, and delivered more high-quality data than anybody else.</p>
+					</div>
+					<div class="ρi ρ_97Bj relative z-0">
+						<div class="select-none pointer-events-none absolute -top-[80%] -bottom-[20%] inset-0 opacity-30 bg-gradient_background__GEkO8 bg-gradient_background-white__Sf_QC"></div>
+						<div>
+							<div class="keen-slider !overflow-visible cursor-grab h-full opacity-100 visible"><a class="keen-slider__slide" href="/blog/chatgpt-reinforcement-learning" style="transform: translate3d(0px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Human feedback" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Blog</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Why Is ChatGPT So Good?</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/guides/data-labeling-annotation-guide" style="transform: translate3d(24px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Blur" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd04e405709ff81e8113737b297a7f6d3.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd04e405709ff81e8113737b297a7f6d3.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fd04e405709ff81e8113737b297a7f6d3.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Guide</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Guide to Data Annotation</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/customers/goodcall" style="transform: translate3d(48px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Phone call" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F156e516ff6d23e2faddab25ea2a7bd20.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F156e516ff6d23e2faddab25ea2a7bd20.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F156e516ff6d23e2faddab25ea2a7bd20.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Customer Case Study</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Goodcall</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/guides/diffusion-models-guide" style="transform: translate3d(72px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="A person at the park" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F96f7a17a6f911c05402e3acf5cebbdc5.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F96f7a17a6f911c05402e3acf5cebbdc5.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F96f7a17a6f911c05402e3acf5cebbdc5.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Guide</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Diffusion Models: A Practical Guide</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/blog/ukraine-detection" style="transform: translate3d(96px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Blur" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cfc7d636e59945f8d4eb01b0049bbad.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cfc7d636e59945f8d4eb01b0049bbad.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cfc7d636e59945f8d4eb01b0049bbad.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Dataset</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Open Dataset: Ukraine Damage Identification</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/blog/chatgpt-vs-claude" style="transform: translate3d(120px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Antrophic and scale logos" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cb7e6c66816cc385e34c63de5c2a707.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cb7e6c66816cc385e34c63de5c2a707.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3cb7e6c66816cc385e34c63de5c2a707.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Blog</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Meet Claude: Anthropic’s rival to ChatGPT</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/open-av-datasets/oxford" style="transform: translate3d(144px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Blur" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F5564334e22cb1e53d7f730bcec096c9e.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F5564334e22cb1e53d7f730bcec096c9e.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F5564334e22cb1e53d7f730bcec096c9e.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Dataset</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Open Dataset: Agreement/Disagreement Dataset of Reddit Interactions</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/blog/gpt-3-davinci-003-comparison" style="transform: translate3d(168px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Planet" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Blog</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">How Much Better Is OpenAI's Newest GPT-3 Model?</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/customers/toyota" style="transform: translate3d(192px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Toyota car" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Ff9806ad17b247f14a2601eaeb124883e.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Ff9806ad17b247f14a2601eaeb124883e.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Ff9806ad17b247f14a2601eaeb124883e.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Customer Case Study</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Toyota Research Institute</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/blog/video-trend-detection" style="transform: translate3d(216px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Picture on a phone" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fc3eea28717fe167727aebbc28c76f490.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fc3eea28717fe167727aebbc28c76f490.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fc3eea28717fe167727aebbc28c76f490.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Blog</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Discovering Emerging Short Form Video Trends with Clustering and HiTL</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/guides/ai-for-ecommerce" style="transform: translate3d(240px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="A person shopping" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8b6c99959277a8f8b0b8731d2e26db4a.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8b6c99959277a8f8b0b8731d2e26db4a.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8b6c99959277a8f8b0b8731d2e26db4a.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Guide</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">Guide to AI for eCommerce</h5>
+									</div>
+								</a><a class="keen-slider__slide" href="/blog/how-to-label-1m-data-points-week" style="transform: translate3d(264px, 0px, 0px); min-width: 418.857px; max-width: 418.857px;">
+									<div class="aspect-[389/243] rounded-lg relative z-10 bg-black overflow-hidden"><img alt="Open AI logo" loading="lazy" width="640" height="402" decoding="async" data-nimg="1" class="object-cover w-full h-full rounded-lg" style="color:transparent" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=768&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fda0d7af7bb6a5e9dc375f98a6804a15a.png&amp;w=1920&amp;q=75"></div>
+									<div class="relative z-20 pt-6">
+										<p class="text-sm font-medium leading-[1.71] text-[#D1AAD7]">Blog</p>
+										<h5 class="line-clamp-2 text-2xl font-aeonik leading-[1.33] mt-1">How OpenAI worked with Scale to build InstructGPT</h5>
+									</div>
+								</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ρd__all ρd__section ρqiBi">
+				<div class="ρd__all ρd__div ρ_6LYvX container">
+					<div class="flex flex-col max-w-3xl mx-auto items-center justify-center text-center mb-10 md:mb-20 md:mt-12 ρi ρ_2Cgsn">
+						<div class="mb-5 lg:mb-5 overflow-hidden tracking-[3px] text-xs md:px-5 md:py-2 lg:text-xs uppercase bg-white bg-opacity-5 text-[#D1AAD7] rounded-full px-4 py-2"><span>Customers</span></div>
+						<h2 class="font-aeonik leading-snug lg:leading-[1.25] text-3xl md:text-4.5xl lg:text-5xl [text-wrap:balance]">We have changed the game of AI data—hear it from our customers.</h2>
+						<p class="mt-4 lg:mt-2 leading-[1.60] text-neutral-100 lg:text-gray-300 lg:text-xl [text-wrap:balance]">From RLHF to data labeling to model evaluation to enterprise apps, learn from experts why Scale is key to any AI strategy.</p>
+					</div>
+					<div class="relative z-10 ρi ρtLbYz">
+						<div class="select-none pointer-events-none absolute -top-[60%] -left-[10%] -right-[10%] bottom-[20%] opacity-50 bg-gradient_background__GEkO8"></div>
+						<div class="keen-slider box_box__wrapper__7yWdR box_box-blue__FPEs4">
+							<div class="flex items-center justify-center min-w-full px-6 py-10 md:py-20 keen-slider__slide" style="opacity: 1; min-width: 1216px; max-width: 1216px; transform: translate3d(0px, 0px, 0px);">
+								<div class="lg:flex-1 max-w-[700px] text-center"><q class="inline-block mb-8 text-base md:leading-[1.6] md:text-xl">The U.S. intelligence community has spent an enormous amount of resources on collection but the sheer volume that returns is a huge problem. Scale’s LLMs are the tool that will allow the IC to finally and fully exploit all of that intelligence that has been collected.</q>
+									<h4 class="inline-block mb-2 font-medium md:leading-7 md:text-lg sm:mb-0 text-no-gradient">Michael Burns</h4>
+									<p class="text-base text-white text-opacity-75">Former Deputy Director of Analysis<!-- -->, <!-- -->Central Intelligence Agency</p>
+								</div>
+							</div>
+							<div class="flex items-center justify-center min-w-full px-6 py-10 md:py-20 keen-slider__slide" style="opacity: 0; min-width: 1216px; max-width: 1216px; transform: translate3d(108px, 0px, 0px);">
+								<div class="lg:flex-1 max-w-[700px] text-center"><q class="inline-block mb-8 text-base md:leading-[1.6] md:text-xl">ChatGPT is a great research capability, but Scale AI’s production-ready LLM not only learned from decades of intelligence collection but also explains how and when it received its mission critical intelligence. That’s an operational imperative to earn commander trust.</q>
+									<h4 class="inline-block mb-2 font-medium md:leading-7 md:text-lg sm:mb-0 text-no-gradient">Morgan Bishop</h4>
+									<p class="text-base text-white text-opacity-75">Computer Scientist<!-- -->, <!-- -->Air Force Research Laboratory</p>
+								</div>
+							</div>
+							<div class="flex items-center justify-center min-w-full px-6 py-10 md:py-20 keen-slider__slide" style="opacity: 0; min-width: 1216px; max-width: 1216px; transform: translate3d(216px, 0px, 0px);">
+								<div class="lg:flex-1 max-w-[700px] text-center"><q class="inline-block mb-8 text-base md:leading-[1.6] md:text-xl">Scale has a great focus on helping companies improve the quality of their data and the usability of their data. Scale has seen so many different applications of AI across so many different kinds of companies. I think it’s well positioned to help a company assess where it is, what’s the state of its data, what’s the state of its systems, and what kind of capability and preparedness to use sophisticated algorithms.</q>
+									<h4 class="inline-block mb-2 font-medium md:leading-7 md:text-lg sm:mb-0 text-no-gradient">Jeff Wilke</h4>
+									<p class="text-base text-white text-opacity-75">Retired CEO, Amazon Worldwide Consumer<!-- -->, <!-- -->Amazon Worldwide Consumer</p>
+								</div>
+							</div>
+							<div class="flex items-center justify-center min-w-full px-6 py-10 md:py-20 keen-slider__slide" style="opacity: 0; min-width: 1216px; max-width: 1216px; transform: translate3d(324px, 0px, 0px);">
+								<div class="lg:flex-1 max-w-[700px] text-center"><q class="inline-block mb-8 text-base md:leading-[1.6] md:text-xl">One of the things we love about Scale is the fact that we can fully label the world. We can label 2D bounding boxes, 3D bounding boxes, but also semantic segmentation, including in 3D, to understand as much as possible, including scenarios we don’t foresee today.</q>
+									<h4 class="inline-block mb-2 font-medium md:leading-7 md:text-lg sm:mb-0 text-no-gradient">Adrien Gaidon</h4>
+									<p class="text-base text-white text-opacity-75">Machine Learning Lead<!-- -->, <!-- -->Toyota Research Institute</p>
+								</div>
+							</div>
+							<div class="flex items-center justify-center min-w-full px-6 py-10 md:py-20 keen-slider__slide" style="opacity: 0; min-width: 1216px; max-width: 1216px; transform: translate3d(432px, 0px, 0px);">
+								<div class="lg:flex-1 max-w-[700px] text-center"><q class="inline-block mb-8 text-base md:leading-[1.6] md:text-xl">Thanks to companies like Scale, a lot of these SaaS tools are building intelligent capabilities into their products[...] that’s a path for a lot of companies to get value from AI without becoming AI shops, which is a really formidable challenge</q>
+									<h4 class="inline-block mb-2 font-medium md:leading-7 md:text-lg sm:mb-0 text-no-gradient">Bret Taylor</h4>
+									<p class="text-base text-white text-opacity-75">Retired President &amp; COO<!-- -->, <!-- -->Salesforce</p>
+								</div>
+							</div>
+						</div>
+						<div class="w-full sm:flex items-center hidden grow min-h-[40px] mt-12 justify-evenly">
+							<div class="cursor-pointer flex justify-center align-middle items-center relative transition-opacity duration-200 opacity-100"><img alt="Michael Burns" loading="eager" width="96" height="96" decoding="async" data-nimg="1" class="object-contain max-h-10 max-w-[70%]" style="color:transparent;filter:contrast(0) brightness(100)" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8458a49d232e607bfe6e26ae1a966e48.svg&amp;w=96&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8458a49d232e607bfe6e26ae1a966e48.svg&amp;w=256&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F8458a49d232e607bfe6e26ae1a966e48.svg&amp;w=256&amp;q=75"></div>
+							<div class="cursor-pointer flex justify-center align-middle items-center relative transition-opacity duration-200 opacity-30"><img alt="Morgan Bishop" loading="eager" width="130" height="80" decoding="async" data-nimg="1" class="object-contain max-h-10 max-w-[70%]" style="color:transparent;filter:contrast(0) brightness(100)" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa9a9bc08a58216704cf90a3b5c8798d0.svg&amp;w=256&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa9a9bc08a58216704cf90a3b5c8798d0.svg&amp;w=320&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa9a9bc08a58216704cf90a3b5c8798d0.svg&amp;w=320&amp;q=75"></div>
+							<div class="cursor-pointer flex justify-center align-middle items-center relative transition-opacity duration-200 opacity-30"><img alt="Jeff Wilke" loading="eager" width="130" height="80" decoding="async" data-nimg="1" class="object-contain max-h-10 max-w-[70%]" style="color:transparent;filter:contrast(0) brightness(100)" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F02f2d5f9c5d4e962734b9dddc428c824.png&amp;w=256&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F02f2d5f9c5d4e962734b9dddc428c824.png&amp;w=320&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F02f2d5f9c5d4e962734b9dddc428c824.png&amp;w=320&amp;q=75"></div>
+							<div class="cursor-pointer flex justify-center align-middle items-center relative transition-opacity duration-200 opacity-30"><img alt="Adrien Gaidon" loading="eager" width="130" height="80" decoding="async" data-nimg="1" class="object-contain max-h-10 max-w-[70%]" style="color:transparent;filter:contrast(0) brightness(100)" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3af0c33ee7fdf88c1be974232fdf6376.svg&amp;w=256&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3af0c33ee7fdf88c1be974232fdf6376.svg&amp;w=320&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2F3af0c33ee7fdf88c1be974232fdf6376.svg&amp;w=320&amp;q=75"></div>
+							<div class="cursor-pointer flex justify-center align-middle items-center relative transition-opacity duration-200 opacity-30"><img alt="Bret Taylor" loading="eager" width="88" height="40" decoding="async" data-nimg="1" class="object-contain max-h-10 max-w-[70%]" style="color:transparent;filter:contrast(0) brightness(100)" srcset="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa132fb8e46b43fdaf800021eed4b2040.png&amp;w=96&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa132fb8e46b43fdaf800021eed4b2040.png&amp;w=256&amp;q=75 2x" src="/_next/image?url=https%3A%2F%2Fsite-assets.plasmic.app%2Fa132fb8e46b43fdaf800021eed4b2040.png&amp;w=256&amp;q=75"></div>
+						</div>
+						<div class="relative mx-auto mt-8 max-w-max sm:hidden"><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white w-4 sm:w-5 md:w-6"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button><button class="px-1 py-2 sm:px-2">
+								<div class="h-1 sm:h-1.5 md:h-2 rounded-full transition-width duration-300 bg-white/40 w-1 sm:w-1.5 md:w-2"></div>
+							</button></div>
+					</div>
+				</div>
+			</section>
+			<div class="ρi ρxujys relative w-full overflow-hidden sm:overflow-visible">
+				<hr class="border-0 bg-[linear-gradient(270deg,_rgba(255,_255,_255,_0.00)_0%,_#FFF_52.07%,_rgba(255,_255,_255,_0.00)_100%)] z-[1] opacity-[0.15] relative h-[1px] w-full max-w-[1006px] mx-auto">
+				<div class="absolute z-10 -translate-x-1/2 -top-10 left-1/2">
+					<div class="object-cover w-[700px] translate-y-[85px] -translate-x-12 xl:w-[870px] xl:translate-y-14 xl:-translate-x-16 pointer-events-none select-none transform transition-transform duration-1000 aspect-[1400/650] scale-0"><video autoplay="" playsinline="" loop="">
+							<source src="/static/images/pages/homepage/footer.mp4" type="video/mp4;codecs=hvc1">
+							<source src="/static/images/pages/homepage/footer.webm" type="video/webm">
+						</video></div>
+				</div>
+				<section id="" class="py-18 lg:py-20 bg-transparent !pb-28 !pt-[110px] md:!pb-36 md:!pt-[132px]">
+					<div class="container relative z-10 sm:px-0 relative">
+						<div class="max-w-[760px] w-fit space-y-6 lg:space-y-10 mx-auto">
+							<div class="relative">
+								<h1 class="relative text-5xl font-light xl:leading-none leading-tight mx-auto sm:leading-[1.1] sm:text-7xl xl:text-[89px] tracking-[-0.89px] font-aeonik text-center"><span class="inline">The future of your industry<!-- --> </span><span class="highlight text-gradient-2023">starts&nbsp;here.</span></h1>
+							</div>
+							<div class="justify-center lg:pt-4 flex items-center gap-x-6"><a label="Book a Demo" style="-webkit-tap-highlight-color:transparent" class="relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/demo">
+									<div class="new-button_button--primary__EJ4AI font-medium justify-center flex flex-nowrap whitespace-nowrap transition-translate duration-300 cursor-pointer group items-center h-full group leading-[150%] new-button_button--purple__hhI2y text-sm px-[30px] py-[14px]">Book a Demo<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></div><span class="after:content-[''] after:inline-block absolute inset-0 after:inset-0 after:absolute select-none pointer-events-none after:rounded-[11px] rounded-[11px] shadow-[inset_0_0_0_1px_rgba(255,255,255,1)] after:shadow-[inset_0_0_0_1px_rgba(105,57,193,0.4)]"></span>
+								</a><a label="Build AI" style="-webkit-tap-highlight-color:transparent" class="text-[#F4F0FF] hover:text-white transition-colors duration-300 py-2 font-medium whitespace-nowrap text-sm leading-5 group relative focus-visible:outline outline-[rgba(255,255,255,0.64)] rounded-xl outline-offset-[3px] inline-block" href="/data-engine">Build AI<span class="inline-block ml-1 font-normal duration-300 w-fit transition-translate group-hover:translate-x-1 font-unicode">→</span></a></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer class="ρi ρlZ6G">
+				<div class="container pt-12 md:pt-20 md:pb-20">
+					<nav>
+						<ul class="grid grid-cols-2 gap-y-2 gap-x-10 md:gap-10 xl:gap-0 md:grid-cols-3 xl:justify-between xl:flex xl:flex-wrap">
+							<li class="mb-8 md:w-auto md:mb-0">
+								<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Products</h2>
+								<ul>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/data-engine">Scale Data Engine</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/genai-platform">Scale GenAI Platform</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/donovan">Scale Donovan</a></li>
+									<li class="mb-8 md:w-auto md:mb-0 mt-8 mb-0">
+										<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Government</h2>
+										<ul>
+											<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/defense">Defense</a></li>
+											<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/federal">Federal</a></li>
+											<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/public-sector">Public Sector</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="mb-8 md:w-auto md:mb-0">
+								<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Company</h2>
+								<ul>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/about">About</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/careers">Careers</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/security">Security</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/legal/terms">Terms</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/legal/privacy">Privacy</a></li>
+								</ul>
+							</li>
+							<li class="mb-8 md:w-auto md:mb-0">
+								<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Resources</h2>
+								<ul>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/blog">Blog</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/customers">Customers</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/events">Events</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/open-av-datasets">Open Datasets</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/docs">Documentation</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides">Guides</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="https://exchange.scale.com/">Community</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/ai-readiness-report">AI Readiness Report 2024</a></li>
+								</ul>
+							</li>
+							<li class="mb-8 md:w-auto md:mb-0">
+								<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Guides</h2>
+								<ul>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/data-labeling-annotation-guide">Data Labeling</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/model-training-building">ML Model Training</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/diffusion-models-guide">Diffusion Models</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/ai-for-ecommerce">Guide to AI for eCommerce</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/computer-vision">Computer Vision Applications</a></li>
+									<li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides/large-language-models">Large Language Models</a></li>
+								</ul>
+							</li>
+							<li class="mb-8 md:w-auto md:mb-0">
+								<h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Contact</h2>
+								<ul>
+									<li class="flex mb-3"><a class="font-normal text-xs md:text-sm text-neutral-400 hover:text-white" href="/sales">sales@scale.com</a></li>
+									<li class="flex mb-3 text-xs md:text-sm"><a href="mailto:support@scale.com" class="font-normal  text-neutral-400 hover:text-white">support@scale.com</a></li>
+									<li class="flex mb-3 text-xs md:text-sm"><a href="mailto:careers@scale.com" class="font-normal  text-neutral-400 hover:text-white">careers@scale.com</a></li>
+									<li class="flex mb-3 text-xs md:text-sm"><a href="mailto:press@scale.com" class="font-normal  text-neutral-400 hover:text-white">press@scale.com</a></li>
+									<li class="flex gap-3 mt-8 text-neutral-400"><a aria-label="Twitter" href="https://x.com/scale_ai"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" role="img" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white">
+												<path d="M18.205 2.25h3.308l-7.227 8.26 8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231 5.45-6.231h.002zm-1.16 17.52h1.832L7.045 4.126H5.078L17.044 19.77z"></path>
+											</svg></a><a aria-label="Facebook" href="https://www.facebook.com/scaleapi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white">
+												<path d="M24.147 12.073C24.147 5.405 18.74 0 12.073 0S0 5.405 0 12.073C0 18.1 4.415 23.094 10.187 24v-8.437H7.12v-3.49h3.066v-2.66c0-3.025 1.802-4.697 4.56-4.697 1.32 0 2.703.236 2.703.236v2.971h-1.523c-1.5 0-1.967.93-1.967 1.887v2.263h3.348l-.535 3.49H13.96V24c5.772-.906 10.187-5.9 10.187-11.927z"></path>
+											</svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/company/scaleai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white">
+												<path d="M22.223 0H1.772C.792 0 0 .773 0 1.73v20.536C0 23.222.792 24 1.772 24h20.451c.98 0 1.777-.778 1.777-1.73V1.73C24 .773 23.203 0 22.223 0zM7.12 20.452H3.558V8.995H7.12v11.457zM5.34 7.434a2.064 2.064 0 110-4.125 2.063 2.063 0 010 4.125zm15.112 13.018h-3.558v-5.57c0-1.326-.024-3.037-1.852-3.037-1.851 0-2.133 1.449-2.133 2.944v5.663H9.356V8.995h3.413v1.566h.047c.473-.9 1.636-1.852 3.365-1.852 3.605 0 4.27 2.372 4.27 5.457v6.286z"></path>
+											</svg></a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+					<div class="flex text-xs md:text-sm  justify-between flex-col md:flex-row pt-6 md:mt-12 pb-12 border-neutral-800 border-t"><span class="text-neutral-400">Copyright © <!-- -->2024<!-- --> Scale AI, Inc. All rights reserved.</span><span class="mt-4 md:mt-0 text-neutral-400"><a class="text-neutral-400 font-normal" href="/legal/terms">Terms of Use</a> <!-- -->&amp;<!-- --> <a class="text-neutral-400 font-normal" href="/legal/privacy">Privacy Policy</a></span></div>
+				</div>
+			</footer>
+		</div>
+	</div><!--/$-->
+</main>
